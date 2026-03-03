@@ -1,0 +1,3 @@
+receptionist1|pass123|RECEPTIONIST
+tech1|pass123|CT_TECHNICIAN
+doctor1|pass123|DOCTOR

@@ -1,0 +1,7 @@
+PatientID=60519
+TotalScore=200
+LM=12
+LAD=12
+LCX=21
+RCA=12
+PDA=141

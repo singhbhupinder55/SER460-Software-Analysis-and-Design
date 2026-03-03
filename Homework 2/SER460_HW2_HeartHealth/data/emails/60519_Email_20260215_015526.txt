@@ -1,0 +1,19 @@
+To: bsingh@asu.edu
+Subject: CT Results and Risk Assessment
+
+Hello bhupinder singh,
+
+Your CT scan results are available.
+
+Total Agatston CAC Score: 200
+LM: 12
+LAD: 12
+LCX: 21
+RCA: 12
+PDA: 141
+
+Risk Assessment:
+101 - 400: Moderate amount of plaque. You have heart disease and plaque may be blocking an artery. Your chance of having a heart attack is moderate to high. Your health professional may want more tests and may start treatment.
+
+Regards,
+Heart Specialist
