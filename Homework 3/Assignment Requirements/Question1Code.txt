@@ -1,0 +1,57 @@
+class Engine {
+    public void start() {
+        System.out.println("Engine started");
+    }
+}
+
+class Transmission {
+    public void shift() {
+        System.out.println("Transmission shifted");
+    }
+}
+
+class Wheels {
+    public void roll() {
+        System.out.println("Wheels are rolling");
+    }
+}
+
+
+
+
+
+class Car {
+    private Engine engine;
+    private Transmission transmission;
+    private Wheels wheels;
+
+    public Car() {
+        engine = new Engine();
+        transmission = new Transmission();
+        wheels = new Wheels();
+    }
+
+    public void drive() {
+        engine.start();
+        transmission.shift();
+        wheels.roll();
+        System.out.println("Car is driving");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car car = new Car();
+        car.drive();
+    }
+}
+   
+		
+		
+							
+		
+	
+	
+
+
+	
