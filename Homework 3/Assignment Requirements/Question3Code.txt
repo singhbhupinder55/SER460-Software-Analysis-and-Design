@@ -1,0 +1,42 @@
+public class Employee {
+
+    private String name;
+    private int id;
+    private double salary;
+    private String department;
+    private String address;
+
+    // Method related to name and id
+    public void printEmployeeDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("ID: " + id);
+    }
+
+    // Method related to salary
+    public void giveRaise(double percent) {
+        salary += salary * percent / 100;
+    }
+
+    // Method related to department
+    public void changeDepartment(String newDepartment) {
+        department = newDepartment;
+    }
+
+    // Method related to address
+    public void updateAddress(String newAddress) {
+        address = newAddress;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Employee emp = new Employee();
+
+        // Using various unrelated methods from Employee class
+        emp.printEmployeeDetails();
+        emp.giveRaise(10);
+        emp.changeDepartment("HR");
+        emp.updateAddress("123 Main St");
+    }
+}
+

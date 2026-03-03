@@ -1,0 +1,55 @@
+class Engine {
+    public int fuelLevel;
+    public boolean isRunning;
+
+    public Engine() {
+        this.fuelLevel = 100;
+        this.isRunning = false;
+    }
+
+    public void start() {
+        if (fuelLevel > 0) {
+            isRunning = true;
+            System.out.println("Engine started");
+        } else {
+            System.out.println("Not enough fuel to start the engine");
+        }
+    }
+}
+
+class Car {
+    private Engine engine;
+
+    public Car() {
+        engine = new Engine();
+    }
+
+    public void drive() {
+        // Directly accessing and modifying the internal state of the Engine
+        engine.fuelLevel -= 10; // Content coupling
+        if (!engine.isRunning) {
+            engine.start();
+        }
+        if (engine.isRunning) {
+            System.out.println("Car is driving with fuel level: " + engine.fuelLevel);
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car car = new Car();
+        car.drive();
+        car.drive();
+    }
+}
+   
+		
+		
+							
+		
+	
+	
+
+
+	
