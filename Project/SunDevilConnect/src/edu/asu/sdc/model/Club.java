@@ -1,0 +1,68 @@
+package edu.asu.sdc.model;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Club {
+    private String clubId;
+    private String name;
+    private String description;
+    private String category;
+    private String status;
+    private List<Event> events;
+    private List<Announcement> announcements;
+
+    public Club(String clubId, String name, String description, String category, String status) {
+        this.clubId = clubId;
+        this.name = name;
+        this.description = description;
+        this.category = category;
+        this.status = status;
+        this.events = new ArrayList<>();
+        this.announcements = new ArrayList<>();
+    }
+
+    public String getClubId() {
+        return clubId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public List<Event> getEvents() {
+        return events;
+    }
+
+    public List<Announcement> getAnnouncements() {
+        return announcements;
+    }
+
+    public void addEvent(Event event) {
+        events.add(event);
+    }
+
+    public void addAnnouncement(Announcement announcement) {
+        announcements.add(announcement);
+    }
+
+    @Override
+    public String toString() {
+        return "Club ID: " + clubId +
+                "\nName: " + name +
+                "\nDescription: " + description +
+                "\nCategory: " + category +
+                "\nStatus: " + status;
+    }
+}
