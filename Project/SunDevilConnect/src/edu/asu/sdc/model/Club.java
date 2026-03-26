@@ -10,6 +10,8 @@ public class Club {
     private String status;
     private List<Event> events;
     private List<Announcement> announcements;
+    private List<Student> members;
+    private List<MembershipRequest> membershipRequests;
 
     public Club(String clubId, String name, String description, String category, String status) {
         this.clubId = clubId;
@@ -19,6 +21,8 @@ public class Club {
         this.status = status;
         this.events = new ArrayList<>();
         this.announcements = new ArrayList<>();
+        this.members = new ArrayList<>();
+        this.membershipRequests = new ArrayList<>();
     }
 
     public String getClubId() {
@@ -49,12 +53,32 @@ public class Club {
         return announcements;
     }
 
+    public List<Student> getMembers() {
+        return members;
+    }
+
+    public List<MembershipRequest> getMembershipRequests() {
+        return membershipRequests;
+    }
+
     public void addEvent(Event event) {
         events.add(event);
     }
 
     public void addAnnouncement(Announcement announcement) {
         announcements.add(announcement);
+    }
+
+    public boolean addMember(Student student) {
+        if (!members.contains(student)) {
+            members.add(student);
+            return true;
+        }
+        return false;
+    }
+
+    public void addMembershipRequest(MembershipRequest request) {
+        membershipRequests.add(request);
     }
 
     @Override

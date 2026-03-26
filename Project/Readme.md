@@ -19,6 +19,8 @@ This project was developed in multiple phases to simulate a real-world software 
 - Defined relationships between core entities like User, Club, Event, and Registration
 
 ### Phase III – Implementation (Incremental)
+
+#### Part 1 – Initial Implementation
 - Implemented the system in Java (console-based application)
 - Built core features:
   - Event browsing
@@ -31,6 +33,27 @@ This project was developed in multiple phases to simulate a real-world software 
   - Context Diagram
   - Component Diagram
   - Deployment Diagram
+
+#### Part 2 – Core Functionality Expansion
+- Enhanced event discovery:
+  - Event search (keyword-based)
+  - Filters by category, free/paid, and location
+- Implemented club membership workflow:
+  - Membership request system
+  - Leader approval process
+- Improved event registration:
+  - Duplicate registration prevention
+  - Capacity validation
+- Improved club page:
+  - Display members, announcements, and events
+
+### Part 3 – Final Implementation (Upcoming)
+- Admin panel functionality:
+  - Approve clubs
+  - Monitor system activity
+  - Manage flagged content
+- Additional system improvements and polish
+- Final project demonstration
 
 ### Phase IV – Final Presentation (Upcoming)
 - Technical presentation of the system

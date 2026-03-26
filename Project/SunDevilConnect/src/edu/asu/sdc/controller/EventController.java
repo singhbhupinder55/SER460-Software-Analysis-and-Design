@@ -45,6 +45,25 @@ public class EventController {
         }
         return filtered;
     }
+    public List<Event> filterByPaidStatus(boolean isPaid) {
+        List<Event> filtered = new ArrayList<>();
+        for (Event event : events) {
+            if (event.isPaid() == isPaid) {
+                filtered.add(event);
+            }
+        }
+        return filtered;
+    }
+
+    public List<Event> filterByLocation(String location) {
+        List<Event> filtered = new ArrayList<>();
+            for (Event event : events) {
+                if (event.getLocation().equalsIgnoreCase(location)) {
+                    filtered.add(event);
+                }
+            }
+            return filtered;
+        }
 
     public Event getEventDetails(String eventId) {
         for (Event event : events) {

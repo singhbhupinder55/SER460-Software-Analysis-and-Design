@@ -31,9 +31,15 @@ public class Student extends User {
     }
 
     public EventRegistration registerForEvent(Event event) {
-        System.out.println(getName() + " registered for event: " + event.getTitle());
-        return new EventRegistration("R-" + event.getEventId(), "2026-03-22", "Confirmed");
-    }
+    System.out.println(getName() + " registered for event: " + event.getTitle());
+    return new EventRegistration(
+            "R-" + getUserId() + "-" + event.getEventId(),
+            "2026-03-22",
+            "Confirmed",
+            getUserId(),
+            event.getEventId()
+    );
+}
 
     public void requestClubMembership(String clubId) {
         System.out.println(getName() + " requested membership for club: " + clubId);

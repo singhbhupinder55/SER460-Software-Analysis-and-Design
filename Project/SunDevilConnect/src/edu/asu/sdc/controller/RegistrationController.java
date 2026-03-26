@@ -13,7 +13,23 @@ public class RegistrationController {
     }
 
     public EventRegistration register(Student student, Event event) {
-        if (event.isFull(registrations.size())) {
+        int currentRegistrationsForEvent = 0;
+
+        for (EventRegistration registration : registrations) {
+            if (registration.getEventId().equalsIgnoreCase(event.getEventId())
+                    && registration.getStatus().equalsIgnoreCase("Confirmed")) {
+                currentRegistrationsForEvent++;
+            }
+
+            if (registration.getStudentId().equalsIgnoreCase(student.getUserId())
+                    && registration.getEventId().equalsIgnoreCase(event.getEventId())
+                    && registration.getStatus().equalsIgnoreCase("Confirmed")) {
+                System.out.println("Registration failed: Student is already registered for this event.");
+                return null;
+            }
+        }
+
+        if (event.isFull(currentRegistrationsForEvent)) {
             System.out.println("Registration failed: Event is full.");
             return null;
         }
