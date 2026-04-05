@@ -1,10 +1,12 @@
 package edu.asu.sdc.model;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Event {
     private String eventId;
     private String title;
     private String description;
-    private String dateTime;
+    private LocalDateTime dateTime;
     private String location;
     private String category;
     private boolean isPaid;
@@ -12,7 +14,7 @@ public class Event {
     private int capacity;
     private String status;
 
-    public Event(String eventId, String title, String description, String dateTime,
+    public Event(String eventId, String title, String description, LocalDateTime dateTime,
                  String location, String category, boolean isPaid, int popularityScore,
                  int capacity, String status) {
         this.eventId = eventId;
@@ -39,7 +41,7 @@ public class Event {
         return description;
     }
 
-    public String getDateTime() {
+    public LocalDateTime getDateTime() {
         return dateTime;
     }
 
@@ -89,10 +91,12 @@ public class Event {
 
     @Override
     public String toString() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd h:mm a");
+
         return "Event ID: " + eventId +
                 "\nTitle: " + title +
                 "\nDescription: " + description +
-                "\nDate/Time: " + dateTime +
+                "\nDate/Time: " + dateTime.format(formatter) +
                 "\nLocation: " + location +
                 "\nCategory: " + category +
                 "\nPaid Event: " + isPaid +

@@ -81,6 +81,10 @@ public class Club {
         membershipRequests.add(request);
     }
 
+    public void setStatus(String status) {
+    this.status = status;
+    }
+
     @Override
     public String toString() {
         return "Club ID: " + clubId +

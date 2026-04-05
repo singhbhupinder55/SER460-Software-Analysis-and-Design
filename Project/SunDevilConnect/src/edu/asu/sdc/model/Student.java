@@ -1,11 +1,13 @@
 package edu.asu.sdc.model;
 
+import java.time.LocalDate;
+
 public class Student extends User {
     private String major;
     private int graduationYear;
 
-    public Student(String userId, String name, String email, String major, int graduationYear) {
-        super(userId, name, email);
+    public Student(String userId, String name, String email, String status, String major, int graduationYear) {
+        super(userId, name, email, status);
         this.major = major;
         this.graduationYear = graduationYear;
     }
@@ -31,15 +33,15 @@ public class Student extends User {
     }
 
     public EventRegistration registerForEvent(Event event) {
-    System.out.println(getName() + " registered for event: " + event.getTitle());
-    return new EventRegistration(
+        System.out.println(getName() + " registered for event: " + event.getTitle());
+        return new EventRegistration(
             "R-" + getUserId() + "-" + event.getEventId(),
-            "2026-03-22",
+            LocalDate.now().toString(),
             "Confirmed",
             getUserId(),
             event.getEventId()
-    );
-}
+        );
+    }
 
     public void requestClubMembership(String clubId) {
         System.out.println(getName() + " requested membership for club: " + clubId);

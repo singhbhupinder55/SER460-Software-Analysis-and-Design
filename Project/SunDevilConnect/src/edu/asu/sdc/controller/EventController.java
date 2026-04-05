@@ -1,4 +1,6 @@
 package edu.asu.sdc.controller;
+
+import java.time.LocalDate;
 import edu.asu.sdc.model.Club;
 import edu.asu.sdc.model.Event;
 import java.util.ArrayList;
@@ -64,6 +66,26 @@ public class EventController {
             }
             return filtered;
         }
+    
+    public List<Event> filterByDate(LocalDate date) {
+        List<Event> filtered = new ArrayList<>();
+            for (Event event : events) {
+                if (event.getDateTime().toLocalDate().equals(date)) {
+                filtered.add(event);
+            }
+        }
+        return filtered;
+    }
+
+    public List<Event> filterByPopularity(int minimumPopularity) {
+        List<Event> filtered = new ArrayList<>();
+            for (Event event : events) {
+                if (event.getPopularityScore() >= minimumPopularity) {
+                filtered.add(event);
+            }
+        }
+        return filtered;
+    }
 
     public Event getEventDetails(String eventId) {
         for (Event event : events) {

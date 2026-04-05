@@ -3,8 +3,8 @@ package edu.asu.sdc.model;
 public class ClubLeader extends User {
     private String positionTitle;
 
-    public ClubLeader(String userId, String name, String email, String positionTitle) {
-        super(userId, name, email);
+    public ClubLeader(String userId, String name, String email, String status, String positionTitle) {
+        super(userId, name, email, status);
         this.positionTitle = positionTitle;
     }
 

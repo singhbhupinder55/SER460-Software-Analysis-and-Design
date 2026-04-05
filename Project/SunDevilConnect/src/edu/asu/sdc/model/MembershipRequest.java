@@ -1,13 +1,15 @@
 package edu.asu.sdc.model;
 
+import java.time.LocalDate;
+
 public class MembershipRequest {
     private String requestId;
-    private String requestDate;
+    private LocalDate requestDate;
     private String status;
     private Student student;
     private Club club;
 
-    public MembershipRequest(String requestId, String requestDate, String status, Student student, Club club) {
+    public MembershipRequest(String requestId, LocalDate requestDate, String status, Student student, Club club) {
         this.requestId = requestId;
         this.requestDate = requestDate;
         this.status = status;
@@ -19,7 +21,7 @@ public class MembershipRequest {
         return requestId;
     }
 
-    public String getRequestDate() {
+    public LocalDate getRequestDate() {
         return requestDate;
     }
 
