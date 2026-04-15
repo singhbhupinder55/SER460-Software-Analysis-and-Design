@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/23"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="edu.asu.sdc.ui.StudentSelectController"
+      alignment="CENTER"
+      spacing="15"
+      style="-fx-background-color: linear-gradient(to bottom, #0f172a, #1e3a8a);">
+
+    <padding>
+        <Insets top="40" right="40" bottom="40" left="40"/>
+    </padding>
+
+    <Label text="Select Student Profile"
+           style="-fx-font-size: 22px; -fx-text-fill: white; -fx-font-weight: bold;" />
+
+    <ComboBox fx:id="studentBox"
+              prefWidth="260" />
+
+    <Button text="Continue"
+            onAction="#handleContinue"
+            prefWidth="200"
+            style="-fx-background-color: #2563eb; -fx-text-fill: white; -fx-font-weight: bold;" />
+
+    <Label fx:id="statusLabel"
+           style="-fx-text-fill: #dbeafe;" />
+
+    <Button text="Back"
+            onAction="#handleBack"
+            prefWidth="200"
+            style="-fx-background-color: #475569; -fx-text-fill: white;" />
+
+</VBox>

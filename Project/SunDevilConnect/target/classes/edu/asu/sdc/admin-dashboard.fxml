@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/23"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="edu.asu.sdc.ui.AdminDashboardController"
+            fitToWidth="true"
+            fitToHeight="true"
+            style="-fx-background-color: #0f172a;">
+
+    <content>
+        <VBox spacing="16"
+              style="-fx-background-color: linear-gradient(to bottom, #0f172a, #1e3a8a);">
+
+            <padding>
+                <Insets top="20" left="20" right="20" bottom="20"/>
+            </padding>
+
+        <HBox alignment="CENTER_LEFT" spacing="20">
+                <Label text="Admin Dashboard"
+                        style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: white;" />
+
+                <Region HBox.hgrow="ALWAYS" />
+
+                <Button text="Back"
+                onAction="#handleBack"
+                style="-fx-background-color: #475569; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+        </HBox>
+
+                <Label fx:id="adminNameLabel"
+                        style="-fx-text-fill: #dbeafe; -fx-font-size: 14px; -fx-font-weight: bold;" />
+                        
+                <Label text="System Message"
+                        style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px;" />
+
+              <TextArea fx:id="statusBox"
+                editable="false"
+                wrapText="true"
+                prefHeight="80"
+                style="-fx-control-inner-background: white; -fx-text-fill: black; -fx-font-size: 24px;" />
+
+
+
+            <Label text="Manage Clubs"
+                   style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px;" />
+
+            <ListView fx:id="clubList" prefHeight="300"/>
+
+            <HBox spacing="10">
+                <Button fx:id="approveClubButton"
+                        text="Approve"
+                        onAction="#handleApproveClub"
+                        style="-fx-background-color: #16a34a; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+                <Button fx:id="denyClubButton"
+                        text="Deny"
+                        onAction="#handleDenyClub"
+                        style="-fx-background-color: #f59e0b; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+                <Button fx:id="suspendClubButton"
+                        text="Suspend"
+                        onAction="#handleSuspendClub"
+                        style="-fx-background-color: #dc2626; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+            </HBox>
+
+            <Separator />
+
+            <Label text="Manage Users"
+                   style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px;" />
+
+            <ListView fx:id="userList" prefHeight="300"/>
+
+            <HBox spacing="10">
+                <Button fx:id="suspendUserButton"
+                        text="Suspend User"
+                        onAction="#handleSuspendUser"
+                        style="-fx-background-color: #dc2626; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+
+                <Button fx:id="activateUserButton"
+                        text="Activate User"
+                        onAction="#handleActivateUser"
+                        style="-fx-background-color: #16a34a; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+             </HBox>
+             
+            <Separator />
+
+            <Label text="Flagged Content"
+                   style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px;" />
+
+            <ListView fx:id="flaggedList" prefHeight="300"/>
+
+            <HBox spacing="10">
+                <Button fx:id="resolveFlagButton"
+                        text="Resolve"
+                        onAction="#handleResolveFlag"
+                        style="-fx-background-color: #16a34a; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+                <Button fx:id="dismissFlagButton"
+                        text="Dismiss"
+                        onAction="#handleDismissFlag"
+                        style="-fx-background-color: #64748b; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+            </HBox>
+
+            <Separator />
+
+        </VBox>
+    </content>
+</ScrollPane>

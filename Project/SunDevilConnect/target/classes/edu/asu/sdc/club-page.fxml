@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/23"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="edu.asu.sdc.ui.ClubPageController"
+      spacing="15"
+      style="-fx-background-color: linear-gradient(to bottom, #0f172a, #1e3a8a);">
+
+    <padding>
+        <Insets top="20" left="20" right="20" bottom="20"/>
+    </padding>
+
+    <Label fx:id="clubName"
+           style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: white;" />
+
+    <Label fx:id="clubDescription"
+           style="-fx-text-fill: #dbeafe;" />
+
+    <Label fx:id="clubStatus"
+           style="-fx-text-fill: #93c5fd;" />
+
+    <Label text="Members" style="-fx-text-fill: white; -fx-font-weight: bold;" />
+    <ListView fx:id="membersList" prefHeight="120"/>
+
+    <Label text="Announcements" style="-fx-text-fill: white; -fx-font-weight: bold;" />
+    <ListView fx:id="announcementList" prefHeight="120"/>
+
+    <Label text="Events" style="-fx-text-fill: white; -fx-font-weight: bold;" />
+    <ListView fx:id="eventList" prefHeight="150"/>
+
+    <Button text="Back"
+            onAction="#handleBack"
+            style="-fx-background-color: #475569; -fx-text-fill: white;" />
+
+</VBox>

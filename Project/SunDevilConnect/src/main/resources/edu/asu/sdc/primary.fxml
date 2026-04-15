@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/23"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="edu.asu.sdc.ui.PrimaryController"
+      alignment="CENTER"
+      spacing="18"
+      style="-fx-background-color: linear-gradient(to bottom, #0f172a, #1e3a8a);">
+
+    <padding>
+        <Insets top="40" right="40" bottom="40" left="40"/>
+    </padding>
+
+    <Label text="SunDevil Connect"
+           style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: white;" />
+
+    <Label text="College Event &amp; Club Management System"
+           style="-fx-font-size: 15px; -fx-text-fill: #dbeafe;" />
+
+    <Label text="Select Your Role"
+           style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #f8fafc; -fx-padding: 20 0 10 0;" />
+
+    <Button text="Student"
+            onAction="#handleStudent"
+            prefWidth="220"
+            prefHeight="42"
+            style="-fx-background-color: #2563eb; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-background-radius: 10;" />
+
+    <Button text="Club Leader"
+            onAction="#handleLeader"
+            prefWidth="220"
+            prefHeight="42"
+            style="-fx-background-color: #0f766e; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-background-radius: 10;" />
+
+    <Button text="Admin"
+            onAction="#handleAdmin"
+            prefWidth="220"
+            prefHeight="42"
+            style="-fx-background-color: #7c3aed; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-background-radius: 10;" />
+
+    <Button text="Exit"
+            onAction="#handleExit"
+            prefWidth="220"
+            prefHeight="42"
+            style="-fx-background-color: #b91c1c; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-background-radius: 10;" />
+
+</VBox>

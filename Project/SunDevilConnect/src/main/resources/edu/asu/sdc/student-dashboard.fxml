@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/23"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="edu.asu.sdc.ui.StudentDashboardController"
+            fitToWidth="true"
+            fitToHeight="true"
+            pannable="true"
+            style="-fx-background: #0f172a; -fx-background-color: #0f172a;">
+
+    <content>
+        <VBox spacing="12"
+              style="-fx-background-color: linear-gradient(to bottom, #0f172a, #1e3a8a);">
+
+            <padding>
+                <Insets top="20" left="20" right="20" bottom="20"/>
+            </padding>
+
+       <HBox alignment="CENTER_LEFT" spacing="20">
+              <Label text="Student Dashboard"
+                     style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: white;" />
+
+              <Region HBox.hgrow="ALWAYS" />
+
+              <Button text="Back"
+              onAction="#handleBack"
+              style="-fx-background-color: #475569; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+       </HBox>
+
+            <Label fx:id="studentNameLabel"
+                     style="-fx-text-fill: #dbeafe; -fx-font-size: 14px; -fx-font-weight: bold;" />
+              
+            <Label text="System Message"
+              style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px;" />
+
+              <TextArea fx:id="statusBox"
+              editable="false"
+              wrapText="true"
+              prefHeight="80"
+              style="-fx-control-inner-background: white; -fx-text-fill: black; -fx-font-size: 18px;" />
+
+
+            <GridPane hgap="10" vgap="6">
+                <columnConstraints>
+                    <ColumnConstraints prefWidth="180"/>
+                    <ColumnConstraints prefWidth="120"/>
+                    <ColumnConstraints prefWidth="150"/>
+                    <ColumnConstraints prefWidth="120"/>
+                    <ColumnConstraints prefWidth="170"/>
+                    <ColumnConstraints prefWidth="120"/>
+                    <ColumnConstraints prefWidth="100"/>
+                </columnConstraints>
+
+                <Label text="Search"
+                       GridPane.rowIndex="0" GridPane.columnIndex="0"
+                       style="-fx-text-fill: white; -fx-font-weight: bold;" />
+                <Label text="Category"
+                       GridPane.rowIndex="0" GridPane.columnIndex="1"
+                       style="-fx-text-fill: white; -fx-font-weight: bold;" />
+                <Label text="Location"
+                       GridPane.rowIndex="0" GridPane.columnIndex="2"
+                       style="-fx-text-fill: white; -fx-font-weight: bold;" />
+                <Label text="Free/Paid"
+                       GridPane.rowIndex="0" GridPane.columnIndex="3"
+                       style="-fx-text-fill: white; -fx-font-weight: bold;" />
+                <Label text="Date"
+                       GridPane.rowIndex="0" GridPane.columnIndex="4"
+                       style="-fx-text-fill: white; -fx-font-weight: bold;" />
+                <Label text="Popularity"
+                       GridPane.rowIndex="0" GridPane.columnIndex="5"
+                       style="-fx-text-fill: white; -fx-font-weight: bold;" />
+
+                <TextField fx:id="searchField"
+                           promptText="Search events..."
+                           prefWidth="180"
+                           GridPane.rowIndex="1" GridPane.columnIndex="0" />
+
+                <ComboBox fx:id="categoryBox"
+                          promptText="Category"
+                          prefWidth="120"
+                          GridPane.rowIndex="1" GridPane.columnIndex="1" />
+
+                <ComboBox fx:id="locationBox"
+                          promptText="Location"
+                          prefWidth="150"
+                          GridPane.rowIndex="1" GridPane.columnIndex="2" />
+
+                <ComboBox fx:id="paidBox"
+                          promptText="Free/Paid"
+                          prefWidth="120"
+                          GridPane.rowIndex="1" GridPane.columnIndex="3" />
+
+                <HBox spacing="6" GridPane.rowIndex="1" GridPane.columnIndex="4">
+                    <DatePicker fx:id="datePicker" prefWidth="125" />
+                    <Button text="Clear"
+                            onAction="#handleClearDate"
+                            style="-fx-background-color: #64748b; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+                </HBox>
+
+                <ComboBox fx:id="popularityBox"
+                          promptText="Popularity"
+                          prefWidth="120"
+                          GridPane.rowIndex="1" GridPane.columnIndex="5" />
+
+                <Button text="Search"
+                        onAction="#handleSearch"
+                        GridPane.rowIndex="1" GridPane.columnIndex="6"
+                        style="-fx-background-color: #2563eb; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+            </GridPane>
+
+            <Separator />
+
+            <ListView fx:id="eventList" VBox.vgrow="ALWAYS" />
+
+            <HBox spacing="12">
+                <Button text="Register Event"
+                        onAction="#handleRegister"
+                        style="-fx-background-color: #16a34a; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+
+                <Button text="View Details"
+                        onAction="#handleViewDetails"
+                        style="-fx-background-color: #f59e0b; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+
+                <Button text="Join Club"
+                        onAction="#handleJoinClub"
+                        style="-fx-background-color: #0ea5e9; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+
+                <Button text="View Club"
+                        onAction="#handleViewClub"
+                        style="-fx-background-color: #7c3aed; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+
+            </HBox>
+
+            
+        </VBox>
+    </content>
+</ScrollPane>

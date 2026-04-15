@@ -102,12 +102,14 @@ public class EventController {
         return event;
     }
 
-    public Event updateEvent(String eventId, Event updatedEvent) {
-        Event existingEvent = getEventDetails(eventId);
-        if (existingEvent != null) {
-            existingEvent.updateDetails(updatedEvent);
+    public boolean updateEvent(String eventId, Event updatedEvent) {
+        for (Event event : events) {
+            if (event.getEventId().equalsIgnoreCase(eventId)) {
+                event.updateDetails(updatedEvent);
+                return true;
+            }
         }
-        return existingEvent;
+        return false;
     }
 
     public void cancelEvent(String eventId) {

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/23"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="edu.asu.sdc.ui.LeaderDashboardController"
+            fitToWidth="true"
+            pannable="true"
+            style="-fx-background: #0f172a; -fx-background-color: #0f172a;">
+
+    <content>
+        <VBox spacing="16"
+              style="-fx-background-color: linear-gradient(to bottom, #0f172a, #1e3a8a);">
+
+            <padding>
+                <Insets top="20" left="20" right="20" bottom="20"/>
+            </padding>
+
+       <HBox alignment="CENTER_LEFT" spacing="20">
+    
+              <Label text="Club Leader Dashboard"
+              style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: white;" />
+
+              <Region HBox.hgrow="ALWAYS" />
+
+              <Button text="Back"
+              onAction="#handleBack"
+              style="-fx-background-color: #475569; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+       </HBox>
+            
+            <Label fx:id="leaderNameLabel"
+                     style="-fx-text-fill: #dbeafe; -fx-font-size: 14px; -fx-font-weight: bold;" />
+            <Label fx:id="clubNameLabel"
+                   style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #dbeafe;" />
+              
+            <Label text="System Message"
+              style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px;" />
+
+              <TextArea fx:id="statusBox"
+              editable="false"
+              wrapText="true"
+              prefHeight="80"
+              style="-fx-control-inner-background: white; -fx-text-fill: black; -fx-font-size: 24px;" />
+
+            <Label text="Create / Edit Event"
+                   style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px;" />
+
+            <GridPane hgap="12" vgap="10">
+                <columnConstraints>
+                    <ColumnConstraints minWidth="110" prefWidth="110"/>
+                    <ColumnConstraints minWidth="230" prefWidth="230"/>
+                    <ColumnConstraints minWidth="110" prefWidth="110"/>
+                    <ColumnConstraints minWidth="230" prefWidth="230"/>
+                </columnConstraints>
+
+                <Label text="Title"
+                       GridPane.rowIndex="0" GridPane.columnIndex="0"
+                       style="-fx-text-fill: white; -fx-font-weight: bold;" />
+                <TextField fx:id="eventTitleField"
+                           GridPane.rowIndex="0" GridPane.columnIndex="1"
+                           promptText="Event title" />
+
+                <Label text="Location"
+                       GridPane.rowIndex="0" GridPane.columnIndex="2"
+                       style="-fx-text-fill: white; -fx-font-weight: bold;" />
+                <TextField fx:id="eventLocationField"
+                           GridPane.rowIndex="0" GridPane.columnIndex="3"
+                           promptText="Event location" />
+
+                <Label text="Description"
+                       GridPane.rowIndex="1" GridPane.columnIndex="0"
+                       style="-fx-text-fill: white; -fx-font-weight: bold;" />
+                <TextField fx:id="eventDescriptionField"
+                           GridPane.rowIndex="1" GridPane.columnIndex="1"
+                           promptText="Event description" />
+
+                <Label text="Category"
+                       GridPane.rowIndex="1" GridPane.columnIndex="2"
+                       style="-fx-text-fill: white; -fx-font-weight: bold;" />
+                <TextField fx:id="eventCategoryField"
+                           GridPane.rowIndex="1" GridPane.columnIndex="3"
+                           promptText="Tech, Music, etc." />
+
+                <Label text="Date"
+                       GridPane.rowIndex="2" GridPane.columnIndex="0"
+                       style="-fx-text-fill: white; -fx-font-weight: bold;" />
+                <DatePicker fx:id="eventDatePicker"
+                            GridPane.rowIndex="2" GridPane.columnIndex="1" />
+
+                <Label text="Time (HH:mm)"
+                       GridPane.rowIndex="2" GridPane.columnIndex="2"
+                       style="-fx-text-fill: white; -fx-font-weight: bold;" />
+                <TextField fx:id="eventTimeField"
+                           GridPane.rowIndex="2" GridPane.columnIndex="3"
+                           promptText="17:00" />
+
+                <Label text="Popularity"
+                       GridPane.rowIndex="3" GridPane.columnIndex="0"
+                       style="-fx-text-fill: white; -fx-font-weight: bold;" />
+                <TextField fx:id="eventPopularityField"
+                           GridPane.rowIndex="3" GridPane.columnIndex="1"
+                           promptText="10" />
+
+                <Label text="Capacity"
+                       GridPane.rowIndex="3" GridPane.columnIndex="2"
+                       style="-fx-text-fill: white; -fx-font-weight: bold;" />
+                <TextField fx:id="eventCapacityField"
+                           GridPane.rowIndex="3" GridPane.columnIndex="3"
+                           promptText="50" />
+
+                <Label text="Paid Event"
+                       GridPane.rowIndex="4" GridPane.columnIndex="0"
+                       style="-fx-text-fill: white; -fx-font-weight: bold;" />
+                <CheckBox fx:id="paidCheckBox"
+                          GridPane.rowIndex="4" GridPane.columnIndex="1" />
+
+                <HBox spacing="10" GridPane.rowIndex="4" GridPane.columnIndex="3">
+                    <Button fx:id="createEventButton" text="Create Event"
+                            onAction="#handleCreateEvent"
+                            style="-fx-background-color: #2563eb; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+
+                    <Button fx:id="updateEventButton" text="Update Event"
+                            onAction="#handleUpdateEvent"
+                            style="-fx-background-color: #f59e0b; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+                </HBox>
+            </GridPane>
+
+            <Separator />
+
+            <Label text="Club Events"
+                   style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px;" />
+            <ListView fx:id="eventList" prefHeight="160"/>
+
+            <HBox spacing="10">
+                <Button text="Edit Selected Event"
+                        onAction="#handleLoadEventForEdit"
+                        style="-fx-background-color: #7c3aed; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+
+                <Button fx:id="cancelEventButton" text="Cancel Selected Event"
+                        onAction="#handleCancelEvent"
+                        style="-fx-background-color: #dc2626; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+            </HBox>
+
+            <Separator />
+
+            <Label text="Pending Membership Requests"
+                   style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px;" />
+            <ListView fx:id="membershipRequestList" prefHeight="120"/>
+
+            <Button fx:id="approveRequestButton" text="Approve Selected Request"
+                    onAction="#handleApproveRequest"
+                    style="-fx-background-color: #16a34a; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+
+            <Separator />
+
+            <Label text="Post Announcement"
+                   style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px;" />
+
+            <GridPane hgap="12" vgap="10">
+                <columnConstraints>
+                    <ColumnConstraints minWidth="110" prefWidth="110"/>
+                    <ColumnConstraints minWidth="260" prefWidth="260"/>
+                    <ColumnConstraints minWidth="110" prefWidth="110"/>
+                    <ColumnConstraints minWidth="360" prefWidth="360"/>
+                </columnConstraints>
+
+                <Label text="Title"
+                       GridPane.rowIndex="0" GridPane.columnIndex="0"
+                       style="-fx-text-fill: white; -fx-font-weight: bold;" />
+                <TextField fx:id="announcementTitleField"
+                           GridPane.rowIndex="0" GridPane.columnIndex="1"
+                           promptText="Announcement title" />
+
+                <Label text="Message"
+                       GridPane.rowIndex="0" GridPane.columnIndex="2"
+                       style="-fx-text-fill: white; -fx-font-weight: bold;" />
+                <TextField fx:id="announcementMessageField"
+                           GridPane.rowIndex="0" GridPane.columnIndex="3"
+                           promptText="Announcement message" />
+
+                <Button fx:id="postAnnouncementButton" text="Post"
+                        onAction="#handlePostAnnouncement"
+                        GridPane.rowIndex="1" GridPane.columnIndex="3"
+                        style="-fx-background-color: #2563eb; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+            </GridPane>
+
+            <Label text="Announcements"
+                   style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px;" />
+            <ListView fx:id="announcementList" prefHeight="120"/>
+
+            
+        </VBox>
+    </content>
+</ScrollPane>

@@ -25,6 +25,10 @@ public class AdminController {
         return clubs;
     }
 
+    public List<User> viewAllUsers() {
+        return users;
+    }
+
     public boolean approveClub(String clubId) {
         for (Club club : clubs) {
             if (club.getClubId().equalsIgnoreCase(clubId)) {
@@ -64,5 +68,16 @@ public class AdminController {
         }
         return false;
     }
+
+    public boolean activateUser(String userId) {
+        for (User user : users) {
+            if (user.getUserId().equalsIgnoreCase(userId)) {
+                user.setStatus("Active");
+                return true;
+            }
+        }
+        return false;
+    }
+
     
 }
