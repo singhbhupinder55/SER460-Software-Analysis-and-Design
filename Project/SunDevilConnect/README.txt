@@ -9,3 +9,8 @@ Run Instructions JavaFX:
 
 mvn clean javafx:run
 
+
+no premade membership 
+also in the leader show the club name in front of the label so we can which leader belongs to which club
+
+Check if the student has to join the club first, then can only register for the event.
